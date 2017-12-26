@@ -9,6 +9,7 @@ Anton Chaplianka          310224209
 
 // Includes --------------------------------------------------------------------
 #include "PrintToFile.h"
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <windows.h>
@@ -26,7 +27,7 @@ int PrintToFile(char *p_msg, int index)  /* A function Which takes a string
 	FILE *p_stream;
 	if (index == 1)
 	{
-		retval = fopen_s(&p_stream, *p_report_file_path, "a");
+		retval = fopen_s(&p_stream, p_report_file_path, "a");
 		if (0 != retval)
 		{
 			printf("Failed to open file.\n");
@@ -53,7 +54,7 @@ int PrintToFile(char *p_msg, int index)  /* A function Which takes a string
 	}
 	if (index == 2)
 	{
-		retval = fopen_s(&p_stream, *p_debug_file_path, "a");
+		retval = fopen_s(&p_stream, p_debug_file_path, "a");
 		if (0 != retval)
 		{
 			printf("Failed to open file.\n");

@@ -9,15 +9,21 @@ Anton Chaplianka          310224209
 
 // Includes --------------------------------------------------------------------
 #include "PrintToFile.h"
-#include<stdlib.h>
-#include<stdio.h>
-#include<windows.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <windows.h>
 
 // Constants  ------------------------------------------------------------------
 
 int main(int argc, char *argv[]) 
 {
-	hi ya maniak
+
+
+	PrintToFile("string", 1);
+	PrintToFile("string", 2);
+
+	return 0;
 }
 
 //static void WashRoom()
