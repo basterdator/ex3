@@ -8,20 +8,8 @@ Anton Chaplianka          310224209
 ============================================== */
 
 // Includes --------------------------------------------------------------------
-#include "PrintToFile.h"
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<windows.h>
 
-// Constants  ------------------------------------------------------------------
-
-int main(int argc, char *argv[]) 
-{
-	
-}
-
-//static void WashRoom()
-//{
-//
-//
-//}

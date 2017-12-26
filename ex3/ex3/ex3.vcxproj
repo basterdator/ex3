@@ -110,7 +110,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LaundryBot.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="PrintToFile.c" />
+    <ClCompile Include="Roommate.c" />
+    <ClCompile Include="Timer.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrintToFile.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

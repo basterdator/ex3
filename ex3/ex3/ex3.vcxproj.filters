@@ -18,5 +18,25 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LaundryBot.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Roommate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintToFile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrintToFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
