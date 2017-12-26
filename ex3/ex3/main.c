@@ -17,7 +17,7 @@ Anton Chaplianka          310224209
 
 int main(int argc, char *argv[]) 
 {
-	
+	hi ya maniak
 }
 
 //static void WashRoom()
