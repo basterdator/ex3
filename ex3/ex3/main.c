@@ -9,6 +9,7 @@ Anton Chaplianka          310224209
 
 // Includes --------------------------------------------------------------------
 #include "PrintToFile.h"
+#include "Timer.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,9 +20,6 @@ Anton Chaplianka          310224209
 int main(int argc, char *argv[]) 
 {
 
-
-	PrintToFile("string", 1);
-	PrintToFile("string", 2);
 
 	return 0;
 }
