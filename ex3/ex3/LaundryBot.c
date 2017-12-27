@@ -9,6 +9,3 @@ Anton Chaplianka          310224209
 
 // Includes --------------------------------------------------------------------
 
-#include<stdlib.h>
-#include<stdio.h>
-#include<windows.h>

@@ -117,7 +117,9 @@
     <ClCompile Include="Timer.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LaundryBot.h" />
     <ClInclude Include="PrintToFile.h" />
+    <ClInclude Include="Roommate.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -8,6 +8,8 @@ Anton Chaplianka          310224209
 ============================================== */
 
 // Includes --------------------------------------------------------------------
+#include "Roommate.h"
+#include "LaundryBot.h"
 #include "PrintToFile.h"
 #include "Timer.h"
 #include <string.h>
@@ -21,7 +23,6 @@ int main(int argc, char *argv[])
 {
 	
 	PrintToFile("Yo\n", 1);
-
 	return 0;
 
 }
