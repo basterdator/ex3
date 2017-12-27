@@ -29,58 +29,62 @@ DWORD WINAPI LaundryBot(LPVOID lpParam)
 	roommate *p_roomate_list;
 	p_roomate_list = (roommate *)lpParam;
 
-	// Down(laundry_full)
-
-	release_res = ReleaseSemaphore(
-		laundry_full,
-		1, 		/* Signal that exactly one cell was filled */
-		NULL);
-	if (release_res == FALSE) ReportErrorAndEndProgram();
-
-
-	// If time is up and the number of active threads is 1 - then the last roomate turns the robot off - so the robot shuts itself down.
-	if (TimeIsUp == TRUE && num_of_active_roomates <= 1)
+	While(TRUE);
 	{
-		return LAUNDRYBOT_THREAD__CODE_SUCCESS;
-	}
+		// Down(laundry_full)
 
-	// Else: the robot needs to complete it's operation
-	// Writing in the log
-	// Up(log)
-	wait_res = WaitForSingleObject(write_to_file, INFINITE);
-	if (wait_res != WAIT_OBJECT_0) ReportErrorAndEndProgram();
+		release_res = ReleaseSemaphore(
+			laundry_full,
+			1, 		/* Signal that exactly one cell was filled */
+			NULL);
+		if (release_res == FALSE) ReportErrorAndEndProgram();
 
-	// write in the log file
 
-	PrintToFile("bl33p bl00p, r0b0t 4ct1v3\n",1); 
-
-	// Down(log)
-
-	release_res = ReleaseMutex(write_to_file);
-	if (release_res == FALSE) ReportErrorAndEndProgram();
-
-	// Check each roomate whether he has zero clothes in his closet and he had a non zero num of clothes in the first place
-	for (i = 0;i < NUM_OF_ROOMMATES; i++)
-	{
-		if (p_roomate_list[i].curret_clothes == 0 && p_roomate_list[i].total_clothes != 0)
+		// If time is up and the number of active threads is 1 - then the last roomate turns the robot off - so the robot shuts itself down.
+		if (TimeIsUp == TRUE && num_of_active_roomates <= 1)
 		{
-			p_roomate_list[i].curret_clothes = p_roomate_list[i].total_clothes;  // fill up the closet
-			release_res = ReleaseSemaphore(
-				p_roomate_list[i].NoClothes,
-				1, 		/* Signal that exactly one cell was filled */
-				NULL);
-			if (release_res == FALSE) { ReportErrorAndEndProgram(); }
-
+			return LAUNDRYBOT_THREAD__CODE_SUCCESS;
 		}
+
+		// Else: the robot needs to complete it's operation
+		// Writing in the log
+		// Up(log)
+		wait_res = WaitForSingleObject(write_to_file, INFINITE);
+		if (wait_res != WAIT_OBJECT_0) ReportErrorAndEndProgram();
+
+		// write in the log file
+
+		PrintToFile("bl33p bl00p, r0b0t 4ct1v3\n", 1);
+
+		// Down(log)
+
+		release_res = ReleaseMutex(write_to_file);
+		if (release_res == FALSE) ReportErrorAndEndProgram();
+
+		// Check each roomate whether he has zero clothes in his closet and he had a non zero num of clothes in the first place
+		for (i = 0;i < NUM_OF_ROOMMATES; i++)
+		{
+			if (p_roomate_list[i].curret_clothes == 0 && p_roomate_list[i].total_clothes != 0)
+			{
+				p_roomate_list[i].curret_clothes = p_roomate_list[i].total_clothes;  // fill up the closet
+				release_res = ReleaseSemaphore(
+					p_roomate_list[i].NoClothes,
+					1, 		/* Signal that exactly one cell was filled */
+					NULL);
+				if (release_res == FALSE) { ReportErrorAndEndProgram(); }
+
+			}
+		}
+
+		// Up(laundry_empty)
+
+		release_res = ReleaseSemaphore(
+			laundry_empy,
+			1, 		/* Signal that exactly one cell was filled */
+			NULL);
+		if (release_res == FALSE) ReportErrorAndEndProgram();
 	}
-
-	// Up(laundry_empty)
-
-	release_res = ReleaseSemaphore(
-		laundry_empy,
-		1, 		/* Signal that exactly one cell was filled */
-		NULL);
-	if (release_res == FALSE) ReportErrorAndEndProgram();
+	
 
 }
 
