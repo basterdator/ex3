@@ -9,6 +9,8 @@ Anton Chaplianka          310224209
 
 // Includes --------------------------------------------------------------------
 #include "PrintToFile.h"
+#include Timer.h"
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <windows.h>
@@ -17,7 +19,10 @@ Anton Chaplianka          310224209
 
 int main(int argc, char *argv[]) 
 {
-	hakol tov
+
+
+	return 0;
+
 }
 
 //static void WashRoom()

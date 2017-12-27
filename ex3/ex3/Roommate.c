@@ -9,7 +9,12 @@ Anton Chaplianka          310224209
 
 // Includes --------------------------------------------------------------------
 
-#include<stdlib.h>
-#include<stdio.h>
-#include<windows.h>
+#include "PrintToFile.h"
+#include "Timer.h"
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <windows.h>
+
+
 
