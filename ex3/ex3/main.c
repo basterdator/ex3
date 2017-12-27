@@ -12,12 +12,14 @@ Anton Chaplianka          310224209
 #include "LaundryBot.h"
 #include "PrintToFile.h"
 #include "Timer.h"
+#include "main.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <windows.h>
 
 // Constants  ------------------------------------------------------------------
+
 
 int main(int argc, char *argv[]) 
 {

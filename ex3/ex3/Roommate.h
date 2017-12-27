@@ -9,12 +9,12 @@
 #include <windows.h>
 
 
-typedef struct roomate_s
+typedef struct roommate_s
 {
 	int time;
 	int total_clothes;
 	int curret_clothes;
 	HANDLE NoClothes;
-}roomate;
+}roommate;
 
 #endif // __ROOMMATE_H__

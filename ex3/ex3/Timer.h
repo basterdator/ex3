@@ -13,7 +13,7 @@ typedef enum
 	TIMER_THREAD__CODE_NULL_PTR,
 } TIMER_THREAD__return_code_t;
 
-static BOOL TimeIsUp = FALSE;
+BOOL TimeIsUp = FALSE;
 
 DWORD WINAPI Timer(LPVOID lpParam);
 

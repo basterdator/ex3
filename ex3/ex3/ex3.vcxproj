@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LaundryBot.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="PrintToFile.h" />
     <ClInclude Include="Roommate.h" />
     <ClInclude Include="Timer.h" />
