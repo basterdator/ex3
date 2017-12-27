@@ -19,7 +19,8 @@ Anton Chaplianka          310224209
 
 int main(int argc, char *argv[]) 
 {
-
+	
+	PrintToFile("Yo\n", 1);
 
 	return 0;
 
