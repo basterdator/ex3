@@ -20,11 +20,11 @@ DWORD WINAPI LaundryBot(LPVOID lpParam)
 	int i;
 	extern int num_of_active_roomates;
 	extern HANDLE laundry_full;
-	extern HANDLE laundry_empy;
+	extern HANDLE laundry_empty;
 	extern HANDLE write_to_file;
 
-	DWORD wait_res;
-	BOOL release_res;
+	static DWORD wait_res;
+	static BOOL release_res;
 
 	roommate *p_roomate_list;
 	p_roomate_list = (roommate *)lpParam;
@@ -79,7 +79,7 @@ DWORD WINAPI LaundryBot(LPVOID lpParam)
 		// Up(laundry_empty)
 
 		release_res = ReleaseSemaphore(
-			laundry_empy,
+			laundry_empty,
 			1, 		/* Signal that exactly one cell was filled */
 			NULL);
 		if (release_res == FALSE) ReportErrorAndEndProgram();

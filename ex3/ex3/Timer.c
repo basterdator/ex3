@@ -3,14 +3,14 @@
 
 DWORD WINAPI Timer(LPVOID lpParam)
 {
-	int *T_D;
+	DWORD *T_D;
 
 	if (NULL == lpParam)
 	{
 		return TIMER_THREAD__CODE_NULL_PTR;
 	}
 
-	T_D = (int *)lpParam;
+	T_D = (DWORD *)lpParam;
 
 	Sleep(T_D);
 
