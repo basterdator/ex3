@@ -41,7 +41,7 @@ DWORD WINAPI Roommate(LPVOID lpParam)
 	{
 		return ROOMMATE_THREAD__CODE_NULL_PTR;
 	}
-	
+
 	p_roommate_thread = (roommate_thread *)lpParam;
 	roommate_thread roomate_params = *p_roommate_thread;
 	int roommate_num = roomate_params.num_of_roomate;
@@ -95,18 +95,27 @@ DWORD WINAPI Roommate(LPVOID lpParam)
 		LaundryRoomProcedure(p_current_roommate);
 
 		// up(laundry_room)
+		wait_res = WaitForSingleObject(laundry_room, INFINITE);
+		if (wait_res != WAIT_OBJECT_0) ReportErrorAndEndProgram();
 
 		// If there are zero clothe in your basket:
-		// down(stuck_without_clothes)
+		if ((*p_current_roommate).curret_clothes == 0)
+		{
+			// down(stuck_without_clothes)
+			release_res = ReleaseSemaphore(
+				(*p_current_roommate).NoClothes,
+				1, 		/* Signal that exactly one cell was filled */
+				NULL);
+			if (release_res == FALSE) ReportErrorAndEndProgram();
+		}
+
 		// Repeat
-
 	}
-	
-
-
-
-		
 }
+
+
+
+
 
 // exit_procedure():
 void ExitProcedure(roommate *p_roommate_list) /* The exit procedure gets a pointer to the list of roomates
