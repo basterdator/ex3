@@ -18,6 +18,13 @@ typedef struct roommate_s
 	HANDLE NoClothes;
 }roommate;
 
+typedef struct roommate_thread_s
+{
+	roommate *p_roomate_list;
+	BOOL *Time;
+	int num_of_roomate;
+}roommate_thread;
+
 typedef enum
 {
 	ROOMMATE_THREAD__CODE_SUCCESS,

@@ -12,7 +12,9 @@ HANDLE laundry_room;
 HANDLE laundry_full;
 HANDLE laundry_empy;
 HANDLE write_to_file;
-#define NUM_OF_ROOMMATES 10;
-int num_of_active_roomates = NUM_OF_ROOMMATES;
+int NUM_OF_ROOMMATES = 10;
+int M = 10;
+int num_of_active_roomates = 10;
+int num_of_clothes_in_basket = 0;
 
 #endif // __MAIN_H__

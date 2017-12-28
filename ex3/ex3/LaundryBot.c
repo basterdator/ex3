@@ -19,6 +19,9 @@ DWORD WINAPI LaundryBot(LPVOID lpParam)
 {
 	int i;
 	extern int num_of_active_roomates;
+	extern int num_of_clothes_in_basket;
+	extern int NUM_OF_ROOMMATES;
+	extern int M;
 	extern HANDLE laundry_full;
 	extern HANDLE laundry_empty;
 	extern HANDLE write_to_file;
@@ -66,6 +69,9 @@ DWORD WINAPI LaundryBot(LPVOID lpParam)
 		{
 			if (p_roomate_list[i].curret_clothes == 0 && p_roomate_list[i].total_clothes != 0)
 			{
+				printf("%d", p_roomate_list[i].curret_clothes);
+				// empty the basket
+				num_of_clothes_in_basket = 0;
 				p_roomate_list[i].curret_clothes = p_roomate_list[i].total_clothes;  // fill up the closet
 				release_res = ReleaseSemaphore(
 					p_roomate_list[i].NoClothes,
@@ -73,6 +79,13 @@ DWORD WINAPI LaundryBot(LPVOID lpParam)
 					NULL);
 				if (release_res == FALSE) { ReportErrorAndEndProgram(); }
 
+			} 
+			else
+			{
+				if (p_roomate_list[i].total_clothes != 0) 
+				{
+					p_roomate_list[i].curret_clothes = p_roomate_list[i].total_clothes;
+				}
 			}
 		}
 
