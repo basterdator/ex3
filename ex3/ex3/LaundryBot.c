@@ -10,6 +10,7 @@ Anton Chaplianka          310224209
 // Includes --------------------------------------------------------------------
 #include <windows.h>
 #include "LaundryBot.h"
+#include "Roommate.h"
 #include "Timer.h"
 #include "PrintToFile.h"
 #include "main.h"

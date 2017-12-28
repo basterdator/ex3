@@ -6,13 +6,6 @@
 
 
 // Includes --------------------------------------------------------------------
-#include "Roommate.h"
-
-typedef struct laundrybot_s
-{
-	roommate *p_roomate_list;
-	BOOL *Time;
-}bot;
 
 typedef enum
 {

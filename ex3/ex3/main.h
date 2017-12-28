@@ -10,7 +10,7 @@
 
 HANDLE laundry_room;
 HANDLE laundry_full;
-HANDLE laundry_empy;
+HANDLE laundry_empty;
 HANDLE write_to_file;
 int NUM_OF_ROOMMATES = 10;
 int M = 10;
