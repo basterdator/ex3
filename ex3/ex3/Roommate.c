@@ -57,7 +57,11 @@ DWORD WINAPI Roommate(LPVOID lpParam)
 		if (wait_res != WAIT_OBJECT_0) ReportErrorAndEndProgram();
 
 		// cretae the string to write to the file
-		/// Add code here!!!
+		
+		PrintToFile("Roommate", char *path);
+		PrintToFile(roommate_num, char *path);
+		PrintToFile("active\n", char *path);
+
 		// Write in the diary
 		PrintToFile("Roommate Active\n", 1);
 
